@@ -1,0 +1,14 @@
+[Unit]
+Description=Fan controlling service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=oneshot
+User=root
+ExecStart=/bin/bash /opt/Interface/init
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target reboot.target
+After=multi-user.target reboot.target
