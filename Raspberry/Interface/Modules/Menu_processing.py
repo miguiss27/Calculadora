@@ -132,7 +132,13 @@ def executeComand(comand, flags):
 
 
 	try:
-		res = eval(comand)
+		if(flags["assignMode"]):
+			exec(cmd, globals(), locals())
+			res = "OK"
+			
+		else:
+			res = eval(comand)
+
 		pass
 
 
@@ -146,7 +152,11 @@ def executeComand(comand, flags):
 		res = "Recursion Error (Limit: " + sys.getrecursionlimit() + ")" 
 
 	except:
-		res = "Error"
+		if(flags["assignMode"]):
+			res = "Assigment Error"
+
+		else:
+			res = "Error"
 
 
 	return str(res), flags
