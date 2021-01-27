@@ -129,9 +129,6 @@ def executeComand(comand, flags):
 	
 	if ((flags["tableMode"]) and not(flags["embedded"])):
 		flags["embedded"] = True
-	
-	if(flags["execMode"]):
-		flags["execMode"] = False #Prevent accidental use of exec() instead of showing result
 
 
 	try:
@@ -161,5 +158,8 @@ def executeComand(comand, flags):
 		else:
 			res = "Error"
 
+	
+	if(flags["execMode"]):
+		flags["execMode"] = False #Prevent accidental use of exec() again instead of showing result
 
 	return str(res), flags
