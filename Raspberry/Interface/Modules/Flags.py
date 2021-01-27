@@ -3,7 +3,7 @@
 flags  = {
 	"embedded":False,
 	"tableMode":False, 
-	"assignMode":False,
+	"execMode":False,
 	"keyboardMode":False,
 	"graphicsMode":False,
 }
@@ -13,7 +13,7 @@ flags  = {
 
 flagDictionary = {
 	"table mode": "tableMode",
-	"var assign mode":"assignMode",
+	"exec mode":"execMode"",
 	"raw key mode": "keyboardMode",
 	"graphics mode": "graphicsMode",
 }

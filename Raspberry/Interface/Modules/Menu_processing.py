@@ -129,11 +129,14 @@ def executeComand(comand, flags):
 	
 	if ((flags["tableMode"]) and not(flags["embedded"])):
 		flags["embedded"] = True
+	
+	if(flags["execMode"]):
+		flags["execMode"] = False #Prevent accidental use of exec() instead of showing result
 
 
 	try:
-		if(flags["assignMode"]):
-			exec(command, globals(), locals())
+		if(flags["execMode"]):
+			exec(comand, globals())
 			res = "OK"
 			
 		else:
@@ -151,9 +154,9 @@ def executeComand(comand, flags):
 	except RecursionError:
 		res = "Recursion Error (Limit: " + sys.getrecursionlimit() + ")" 
 
-	except:
-		if(flags["assignMode"]):
-			res = "Assigment Error"
+	except Exception as E:
+		if(flags["execMode"]):
+			res = "Error: " + E
 
 		else:
 			res = "Error"
