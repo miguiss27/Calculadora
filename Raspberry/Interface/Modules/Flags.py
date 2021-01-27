@@ -13,7 +13,7 @@ flags  = {
 
 flagDictionary = {
 	"table mode": "tableMode",
-	"exec mode":"execMode"",
+	"exec mode":"execMode",
 	"raw key mode": "keyboardMode",
 	"graphics mode": "graphicsMode",
 }
