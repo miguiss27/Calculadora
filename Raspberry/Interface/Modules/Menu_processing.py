@@ -71,7 +71,7 @@ def processmenu(key, menu, comand, result, cursor, cursorLimits, flags):
 
 		cmd = ""
 		
-	if (cmd == "execute") or ((cmd == "=") and not(flags["verifyMode"])):
+	if (cmd == "execute"):
 		result, flags = executeComand(comand, flags)
 		cmd = ""
 
@@ -96,7 +96,7 @@ def processmenu(key, menu, comand, result, cursor, cursorLimits, flags):
 	if (cmd in externalComands):
 		curses.endwin()
 	
-		sub.run(externalComands[cmd], stdin= sys.stdin, shell=True)
+		sub.run(externalComands[cmd], stdin=sys.stdin, shell=True)
 		cmd = ""
 
 	comand = comand[:(index)] + cmd + comand[(index):]
@@ -133,7 +133,7 @@ def executeComand(comand, flags):
 
 	try:
 		if(flags["assignMode"]):
-			exec(cmd, globals(), locals())
+			exec(command, globals(), locals())
 			res = "OK"
 			
 		else:

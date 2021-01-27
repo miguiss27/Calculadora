@@ -2,8 +2,7 @@
 
 flags  = {
 	"embedded":False,
-	"tableMode":False,
-	"verifyMode":False,
+	"tableMode":False, 
 	"assignMode":False,
 	"keyboardMode":False,
 	"graphicsMode":False,
@@ -14,7 +13,6 @@ flags  = {
 
 flagDictionary = {
 	"table mode": "tableMode",
-	"verify mode": "verifyMode",
 	"var assign mode":"assignMode",
 	"raw key mode": "keyboardMode",
 	"graphics mode": "graphicsMode",
