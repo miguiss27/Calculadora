@@ -6,7 +6,7 @@ StartLimitIntervalSec=0
 [Service]
 Type=oneshot
 User=root
-ExecStart=/bin/bash /opt/Interface/init
+ExecStart=/bin/bash /opt/calculadora/Raspberry/Interface/init
 RemainAfterExit=yes
 
 [Install]
