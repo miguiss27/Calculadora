@@ -1,5 +1,5 @@
 [Unit]
-Description=Fan controlling service
+Description=Interface init service
 After=multi-user.target reboot.target getty.target
 StartLimitIntervalSec=0
 
