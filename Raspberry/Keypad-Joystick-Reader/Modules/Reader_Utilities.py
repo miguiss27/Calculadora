@@ -19,32 +19,32 @@ def processJoystick(spi, mouseMode, center, channels):
 
 	# proccess joystick
 	if not(mouseMode):
-		if (data[1] > center[1]):
+		if (data[0] < center[0]):
 			keyboard.press_and_release("up")
 
-		elif (data[1] < center[0]):
+		elif (data[0] > center[1]):
 			keyboard.press_and_release("down")
 		
-		if (data[0] > center[1]):
+		if (data[1] < center[0]):
 			keyboard.press_and_release("right")
 		
-		elif (data[0] < center[0]):
+		elif (data[1] > center[1]):
 			keyboard.press_and_release("left")
 		
 		if (data[2] > center[1]):
 			keyboard.press_and_release("enter")
 
 	if (mouseMode):
-		if (data[0] > center[1]):
+		if (data[1] < center[0]):
 			mouse.move(1, 0, absolute=False)
 
-		elif (data[0] < center[0]):
+		elif (data[1] > center[1]):
 			mouse.move(-1, 0, absolute=False)
 		
-		if (data[1] > center[1]):
+		if (data[0] < center[0]):
 			mouse.move(0, 1, absolute=False)
 		
-		elif (data[1] < center[0]):
+		elif (data[0] > center[1]):
 			mouse.move(0, -1, absolute=False)
 		
 		if (data[2] > center[1]):
