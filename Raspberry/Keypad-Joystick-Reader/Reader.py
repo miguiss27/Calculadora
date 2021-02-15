@@ -2,15 +2,22 @@
 
 mouseMode = False
 
+#define some constants
+
+center = [341, 682] # min, max values of the joystick center
+channels = [0, 1, 2] # chanels of the MCP3008 to use as X, Y and button
+
 #import dependencies
 
 from Modules.Reader_Utilities import *
-from gpiozero import Button
+import spidev
 from mouse import click
 from pad4pi import rpi_gpio
 
-
-
+#prepare spi device
+spi = spidev.SpiDev()
+spi.open(0,0)
+spi.max_speed_hz=1000000
 
 #initialice pad4pi library
 
@@ -33,44 +40,9 @@ keypad = factory.create_keypad(keypad=KEYPAD, row_pins=ROW_PINS, col_pins=COL_PI
 
 keypad.registerKeyPressHandler(keyHandler)
 
-#prepare pins to be readed of the data bus
-
-clk = Button(25,pull_up=True)
-dat = Button(8, pull_up=True)
-syn = Button(7, pull_up=True)
-
-#prepare pins
-
-clk.hold_time = 0
- 
-#Joystick data read utility
-
-
-def joyDataread():
-	data = ""
-
-	while True:
-		if (clk.is_pressed):
-			if (dat.is_pressed):
-				data = data + "1"
-			
-			else:
-				data = data + "0"
-			
-		if (syn.is_pressed):
-			break
-	
-	return str(data)
-
 
 #main infinite loop execution
 
-syn.wait_for_press()
-
-center, axis_x, axis_y, button = False, 0, 0, False
-
 while True:
 	
-	data = joyDataread()
-	center, axis_x, axis_y, button = converttoval(data)
-	joyHandler(center, axis_x, axis_y, button)
+	processJoystick(spi, mouseMode, center, channels)
