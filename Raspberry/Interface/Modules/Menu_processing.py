@@ -67,7 +67,7 @@ def processmenu(key, menu, comand, result, cursor, cursorLimits, flags):
 		
 		flags = processFlags(cmd, flags)
 		if(flagDictionary[cmd] == "tableMode"):
-			comand = "createTable(["f(x)=x"],["x"],[-5],[5],[1])"
+			comand = "createTable([\"f(x)=x\"],[\"x\"],[-5],[5],[1])"
 
 		cmd = ""
 		

@@ -26,8 +26,6 @@ def main(window):
 	result = ''
 	key = ''
 
-	embeddedmenu = createTable(["f(x,y)=x/y", "g(x)=1+x", "h(x)=x-1"], ['x','y'], [0,1],[10,11], [0.5,0.5])
-
 	flags = Modules.Flags.flags
 
 	cursor = [0,1]
