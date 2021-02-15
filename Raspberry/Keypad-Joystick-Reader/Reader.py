@@ -4,6 +4,7 @@ mouseMode = False
 
 #define some constants
 
+delay =0.25 # seconds
 center = [341, 682] # min, max values of the joystick center
 channels = [0, 1, 2] # chanels of the MCP3008 to use as X, Y and button
 
@@ -13,6 +14,7 @@ from Modules.Reader_Utilities import *
 import spidev
 from mouse import click
 from pad4pi import rpi_gpio
+import time
 
 #prepare spi device
 spi = spidev.SpiDev()
@@ -46,3 +48,4 @@ keypad.registerKeyPressHandler(keyHandler)
 while True:
 	
 	processJoystick(spi, mouseMode, center, channels)
+	time.sleep(delay)

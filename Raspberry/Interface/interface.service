@@ -11,4 +11,4 @@ RemainAfterExit=yes
 
 [Install]
 WantedBy=multi-user.target reboot.target
-After=multi-user.target reboot.target
+After=multi-user.target reboot.target getty.target
