@@ -15,7 +15,7 @@ def processJoystick(spi, mouseMode, center, channels):
 	
 	# gather joystick data
 	for channel in channels:
-		data.append(readChannel(channel))
+		data.append(readChannel(spi, channel))
 
 	# proccess joystick
 	if not(mouseMode):
@@ -51,7 +51,7 @@ def processJoystick(spi, mouseMode, center, channels):
 			mouse.click()
 
 # Function for reading the MCP3008 channel
-def readChannel(channel):
+def readChannel(spi, channel):
 	val = spi.xfer2([1,(8+channel)<<4,0])
 	data = ((val[1]&3) << 8) + val[2]
 	return data
