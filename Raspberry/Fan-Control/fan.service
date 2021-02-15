@@ -8,7 +8,7 @@ Type=simple
 Restart=on-failure
 RestartSec=1
 User=pi
-ExecStart=/usr/bin/python3 /opt/calculadora/Raspberry/Fan-control/main.py
+ExecStart=/usr/bin/python3 /opt/calculadora/Raspberry/Fan-Control/main.py
 
 [Install]
 WantedBy=multi-user.target reboot.target

@@ -1,6 +1,6 @@
 [Unit]
 Description=Fan controlling service
-After=network.target
+After=multi-user.target reboot.target getty.target
 StartLimitIntervalSec=0
 
 [Service]
@@ -10,5 +10,4 @@ ExecStart=/bin/bash /opt/calculadora/Raspberry/Interface/init
 RemainAfterExit=yes
 
 [Install]
-WantedBy=multi-user.target reboot.target
-After=multi-user.target reboot.target getty.target
+WantedBy=multi-user.target reboot.target getty.service
