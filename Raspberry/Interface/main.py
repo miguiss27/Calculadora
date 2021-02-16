@@ -29,7 +29,7 @@ def main(window):
 	flags = Modules.Flags.flags
 
 	cursor = [0,1]
-	oldcuersor = [0,1]
+	oldcursor = [0,1]
 	cursorLimits = [[-1, 0],[3,34]]
 	showcursor = True
 	lastBlink = 0
