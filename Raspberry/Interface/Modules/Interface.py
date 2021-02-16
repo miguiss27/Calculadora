@@ -9,7 +9,7 @@ import curses
 
 #menu print function
 
-def showmenu(window, menu, comand, result, cursor, cursorLimits):
+def showmenu(window, menu, comand, result, cursor, cursorLimits, showcursor):
 
 	#gather all data needed to show the menu
 
@@ -106,7 +106,8 @@ def showmenu(window, menu, comand, result, cursor, cursorLimits):
 			
 			#print cursor in comand
 			try:
-				window.chgat(((menuFrameTotalHeight // 2) + cursor[0]), ((menuFrameTotalWidth // 2) + cursor[1]),1, curses.color_pair(1))
+				if (showcursor):
+					window.chgat(((menuFrameTotalHeight // 2) + cursor[0]), ((menuFrameTotalWidth // 2) + cursor[1]),1, curses.color_pair(1))
 			except:
 				pass
 

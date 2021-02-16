@@ -3,6 +3,7 @@
 from .Menus import *
 from curses import ascii, ERR, KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT
 from decimal import Decimal
+from time import time
 
 #keypresses helper
 
@@ -57,4 +58,17 @@ def frange(start=0.0, stop=1.0, step=1.0):
 			break
 		yield round(temp, rangePrecision)
 		count += 1
+
+
+def changeinterval(val, newval, interval, lastchange):
+
+	precission = abs(Decimal(str(interval)).as_tuple().exponent)
 	
+	currentime = (time() * (10 ** precission))
+
+	change = (currentime - lastchange) >= int((interval * (10 ** precission)))
+
+	if (change):
+		return newval, currentime
+
+	return val, lastchange

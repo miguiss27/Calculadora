@@ -5,7 +5,7 @@ visibility = 0
 nodelay = True
 
 timeSleep = 0.001
-
+blinkinterval = 0.5
 
 menuMinHeight = 5
 menuMinWidth = 36
