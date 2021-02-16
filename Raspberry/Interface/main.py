@@ -52,7 +52,8 @@ def main(window):
 		#blink cursor if its not moving
 		if (oldcursor == cursor):
 			showcursor, lastBlink = changeinterval(showcursor, not showcursor, blinkinterval, lastBlink)
-		oldcursor = cursor
+		if (oldcursor != cursor)
+			oldcursor = cursor
 
 
 
