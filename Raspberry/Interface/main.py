@@ -50,10 +50,8 @@ def main(window):
 		sleep(timeSleep) #help with overloading processor
 
 		#blink cursor if its not moving
-		if (oldcursor == cursor):
+		if not(key in ["KEY_UP", "KEY_DOWN", "KEY_LEFT", "KEY_RIGHT"]):
 			showcursor, lastBlink = changeinterval(showcursor, not showcursor, blinkinterval, lastBlink)
-		if (oldcursor != cursor):
-			oldcursor = cursor
 
 
 
