@@ -100,7 +100,10 @@ def processmenu(key, menu, comand, result, cursor, cursorLimits, flags):
 		sub.run(externalComands[cmd], stdin=sys.stdin, shell=True)
 		cmd = ""
 
-	comand = comand[:(index)] + cmd + comand[(index):]
+	if (cursor[1] == 1):
+		comand = comand[:(index-1)] + cmd + comand[(index-1):]
+	else:
+		comand = comand[:(index)] + cmd + comand[(index):]
 
 	#update and process cursor position again
 
