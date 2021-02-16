@@ -29,6 +29,7 @@ def main(window):
 	flags = Modules.Flags.flags
 
 	cursor = [0,1]
+	oldcursor = cursor
 	cursorLimits = [[-1, 0],[3,34]]
 	showcursor = True
 	lastBlink = 0
@@ -48,8 +49,10 @@ def main(window):
 
 		sleep(timeSleep) #help with overloading processor
 
-		#blink cursor
-		showcursor, lastBlink = changeinterval(showcursor, not showcursor, blinkinterval, lastBlink)
+		#blink cursor if its not moving
+		if (oldcursor == cursor):
+			showcursor, lastBlink = changeinterval(showcursor, not showcursor, blinkinterval, lastBlink)
+		oldcursor = cursor
 
 
 
