@@ -4,6 +4,7 @@ from .Menus import *
 from .Utilities import *
 from .Flags import processFlags, flagDictionary
 from .Cursor import processCursor, updateCursor
+from .Tables import *
 
 #import proccesing libraries
 
@@ -152,11 +153,7 @@ def executeComand(comand, flags):
 		res = "Recursion Error (Limit: " + sys.getrecursionlimit() + ")" 
 
 	except Exception as E:
-		if(flags["execMode"]):
-			res = "Error: " + E
-
-		else:
-			res = "Error"
+		res = "Error: " + str(E)
 
 	
 	if(flags["execMode"]):
