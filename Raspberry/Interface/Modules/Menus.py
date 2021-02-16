@@ -15,7 +15,7 @@ menu0 = {
 	0:"quit",1:"basic",2:"keyboard",3:"next",
 	4:"delete",5:"clear",6:"clear result",7:"execute",
 	8:"table mode",9:"raw key mode",10:"exec mode",11:"graphics mode",
-	12:"none",13:"none",14:"none",15:"none"
+	12:"blink cursor",13:"none",14:"none",15:"none"
 }
 
 menu1 = {

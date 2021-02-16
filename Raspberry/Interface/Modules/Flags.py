@@ -6,6 +6,7 @@ flags  = {
 	"execMode":False,
 	"keyboardMode":False,
 	"graphicsMode":False,
+	"blinkCursor":True,
 }
 
 
@@ -16,6 +17,7 @@ flagDictionary = {
 	"exec mode":"execMode",
 	"raw key mode": "keyboardMode",
 	"graphics mode": "graphicsMode",
+	"blink cursor": "blinkCursor",
 }
 
 #Dictionary to change flag dependent flags
