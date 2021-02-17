@@ -6,7 +6,7 @@ flags  = {
 	"execMode":False,
 	"keyboardMode":False,
 	"graphicsMode":False,
-	"blinkCursor":True,
+	"blinkCursor":False,
 }
 
 
