@@ -44,7 +44,10 @@ def processJoystick(spi, mouseMode, center, channels):
 		
 
 		if (data[2] > center[1]):
-			keyboard.press_and_release("enter")
+			keyboard.press("enter")
+		else:
+			keyboard.release("enter")
+
 
 	if (mouseMode):
 		if (data[1] < center[0]):

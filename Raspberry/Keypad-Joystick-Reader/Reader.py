@@ -4,7 +4,7 @@ mouseMode = False
 
 #define some constants
 
-delay =0.01 # seconds
+delay =0.1 # seconds
 center = [341, 682] # min, max values of the joystick center
 channels = [0, 1, 2] # chanels of the MCP3008 to use as X, Y and button
 
