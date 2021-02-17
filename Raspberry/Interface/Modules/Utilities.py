@@ -64,7 +64,7 @@ def changeinterval(val, newval, interval, lastchange):
 
 	precission = abs(Decimal(str(interval)).as_tuple().exponent)
 	
-	currentime = (time() * (10 ** precission))
+	currentime = int(time() * (10 ** precission))
 
 	change = (currentime - lastchange) >= int((interval * (10 ** precission)))
 
