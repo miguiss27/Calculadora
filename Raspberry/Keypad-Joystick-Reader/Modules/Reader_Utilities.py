@@ -2,14 +2,13 @@
 
 import keyboard
 import mouse
+from time import sleep
 
-#key handlers
+#key handler
 
 def keyHandler(key):
 	keyboard.press(key)
-	keyboard.call_later(unpress,args=(key),delay=0.1)
-
-def unpress(key)
+	sleep(0.05)
 	keyboard.release(key)
 
 #Joystick key handler
