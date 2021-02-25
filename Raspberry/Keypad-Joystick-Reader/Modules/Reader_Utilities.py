@@ -3,13 +3,17 @@
 import keyboard
 import mouse
 
-#key handler
+#key handlers
 
 def keyHandler(key):
-	keyboard.press_and_release(key)
+	keyboard.press(key)
+	keyboard.call_later(unpress,args=(key),delay=0.1)
 
+def unpress(key)
+	keyboard.release(key)
 
 #Joystick key handler
+
 def processJoystick(spi, mouseMode, center, channels):
 	data = []
 	
