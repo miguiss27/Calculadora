@@ -199,7 +199,7 @@ def embedMenu(window, menu, cursor, cursorLimits):
 		
 		for y in range(cursor[0],(menuHeight + cursor[0])):
 			try:
-				menuWindow.addnstr((y - cursor[0]), cursor[1], menuArr[(y)], (menuWidth - cursor[1]))
+				menuWindow.addnstr((y + cursor[0]), cursor[1], menuArr[(y)], (menuWidth - cursor[1]))
 			except:
 				pass
 		
