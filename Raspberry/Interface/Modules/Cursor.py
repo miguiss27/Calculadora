@@ -18,13 +18,13 @@ def processCursor(key, cursor, cursorLimits):
 
 
 	if (key == "KEY_UP") and (cursor[0] in yRange):
-		cursor[0] += 1
+		cursor[0] -= 1
 	
 	elif (not(cursor[0] in yRange)):
 		cursor[0] = yRange[-1]
 	
 	if (key == "KEY_DOWN") and (cursor[0] in yRange):
-		cursor[0] -= 1
+		cursor[0] += 1
 	
 	elif (not(cursor[0] in yRange)):
 		cursor[0] = yRange[0]
